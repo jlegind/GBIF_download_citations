@@ -182,19 +182,21 @@ def read_datasetkeys(filename):
                 # break
                 yield key
 
-boiler = 'When using this dataset please use the following citation and pay attention to the rights documented in rights.txt:'
 
-with open('f:/Exports/Chile/citation_test.txt', 'w', encoding='utf8') as wrt:
+def exe_citation(input_filename, output_filename):
+    pass
+    boiler = 'When using this dataset please use the following citation and pay attention to the rights documented in rights.txt:'
+
+    with open(output_filename, 'w', encoding='utf8') as wrt:
 
 
-    wrt.write(boiler+'\n')
-    rr = read_datasetkeys('f:/Exports/Chile/datasetkeys.csv')
-    for j in rr:
-        ss = j
-        key = ss
-
-        cit = make_citation_string(key)
-        wrt.write(cit+'\n')
-        print('cit: ', cit)
+        wrt.write(boiler+'\n')
+        rr = read_datasetkeys(input_filename)
+        for j in rr:
+            ss = j
+            key = ss
+            cit = make_citation_string(key)
+            wrt.write(cit+'\n')
+            print('cit: ', cit)
 
 
