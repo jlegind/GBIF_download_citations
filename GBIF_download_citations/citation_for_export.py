@@ -1,6 +1,3 @@
-
-print('test import')
-
 """
 This module exists to reproduce the GBIF citation text file which users obtain when requesting a full DwC archive download.
 This is the desired end format:
