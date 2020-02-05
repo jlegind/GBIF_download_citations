@@ -183,7 +183,7 @@ def read_datasetkeys(filename):
 
 
 def exe_citation(input_filename, output_filename):
-    pass
+    
     boiler = 'When using this dataset please use the following citation and pay attention to the rights documented in rights.txt:'
 
     with open(output_filename, 'w', encoding='utf8') as wrt:
