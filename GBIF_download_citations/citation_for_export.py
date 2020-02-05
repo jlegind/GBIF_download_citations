@@ -1,13 +1,15 @@
+
+print('test import')
+
 """
 This module exists to reproduce the GBIF citation text file which users obtain when requesting a full DwC archive download.
 This is the desired end format:
 citation_string = '{originator}({year}). {dataset_title}. {version} {publisher}. {type} dataset {doi} accessed via GBIF.org on {date}.'.format(originator=originator, year= today.year, dataset_title=dataset_title, version=vers, publisher=pubtitle, type=misc['type'], doi=misc['doi'], date=misc['date'])
 """
-import requests
-from datetime import date
 import csv
+from datetime import date
 
-
+import requests
 
 today = date.today()
 
@@ -198,5 +200,5 @@ def exe_citation(input_filename, output_filename):
             cit = make_citation_string(key)
             wrt.write(cit+'\n')
             print('cit: ', cit)
-
+        return output_filename
 
