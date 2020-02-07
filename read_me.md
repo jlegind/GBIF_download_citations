@@ -21,6 +21,7 @@ The citation_for_export.py module provides the way to do that. The execution met
 ### Getting started
 
 The big two things to have in place before running the code is the Python [Requests](https://2.python-requests.org/en/master/) library and a CSV file of GBIF dataset keys.
+I would also recommend getting familiar with the basics of the GBIF API which you can red about here [API Summary](https://www.gbif.org/developer/summary).
 
 ### Usage
 
