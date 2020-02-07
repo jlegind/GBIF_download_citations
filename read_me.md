@@ -18,3 +18,13 @@ Roberts D(2020). CHAS Malacology Collection (Arctos).  Chicago Academy of Scienc
 The citation_for_export.py module provides the way to do that. The execution method only requires an input csv file having the list of dataset keys (GBIF dataset UUIDs)
 -one for each line- and the output file name that will contain the citation text itself.
 
+### Getting started
+
+The big two things to have in place before running the code is the Python [Requests](https://2.python-requests.org/en/master/) library and a CSV file of GBIF dataset keys.
+
+### Usage
+
+> import citation_for_export as ex
+
+
+> res = ex.exe_citation('My_Dataset_Keys.csv', 'My_Citation_File.txt')
