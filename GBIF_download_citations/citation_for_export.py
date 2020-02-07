@@ -5,7 +5,6 @@ citation_string = '{originator}({year}). {dataset_title}. {version} {publisher}.
 """
 import csv
 from datetime import date
-
 import requests
 
 today = date.today()
