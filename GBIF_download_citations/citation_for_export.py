@@ -37,8 +37,6 @@ def extract_values(obj, key):
     return results
 
 
-citation_fields = ['contacts', 'title', 'version', 'publishingOrganizationKey', 'type', 'doi']
-
 def contacts(api, key, field):
     '''
     Returns the originator name in the citation format, Lastname[one whitespace]Firstname(first letter)
