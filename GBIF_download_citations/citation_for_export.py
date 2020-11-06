@@ -132,7 +132,7 @@ def dataset(key, fields):
     print(datasetapi)
     rson = requests.get(datasetapi)
     rson = rson.json()
-    print(rson)
+    # print(rson)
     fields = ['type', 'doi']
     dct = {'type':'', 'doi':'', 'date':today.strftime('%Y-%m-%d')}
     for j in fields:
@@ -168,31 +168,38 @@ def make_citation_string(datasetkey):
     return citation_string
 
 def read_datasetkeys(filename):
-    with open(filename) as f:
+    with open(filename, encoding='utf8') as f:
         spam = csv.reader(f, delimiter='\t')
         next(spam, None)
+        datasetkeys_list = []
         for line in spam:
                 line = line[0].split(',')
                 key = line[0]
-                # print(key)
-                # break
-                yield key
+                datasetkeys_list.append(key)
+        return datasetkeys_list
 
 
 def exe_citation(input_filename, output_filename):
     
-    boiler = 'When using this dataset please use the following citation and pay attention to the rights documented in rights.txt:'
+    boiler = 'When using this dataset please use the following citation and pay attention to the content of the data user agreement ( https://www.gbif.org/terms/data-user ) and citation guidelines ( https://www.gbif.org/citation-guidelines ).'
 
     with open(output_filename, 'w', encoding='utf8') as wrt:
 
-
         wrt.write(boiler+'\n')
         rr = read_datasetkeys(input_filename)
+        print('orig length: ', len(rr))
+        rr = list(set(rr))
+        print('rr length = ', len(rr))
+
         for j in rr:
+            # break
             ss = j
             key = ss
             cit = make_citation_string(key)
             wrt.write(cit+'\n')
-            print('cit: ', cit)
+            # print('cit: ', cit)
         return output_filename
 
+# def get_datasetkeys()
+
+res = exe_citation('c:/Temp/citations/ocean_datasets_export.tsv', 'c:/Temp/citations/Ocean_GBIF_citation')
